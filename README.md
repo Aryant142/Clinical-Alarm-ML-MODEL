@@ -10,9 +10,9 @@ In critical care settings, patient monitoring equipment can generate hundreds of
 3. The Dataset
 This project uses data from the MIMIC-IV (Medical Information Mart for Intensive Care IV) database, a large, publicly available, de-identified dataset of ICU patient records. The primary data used includes:
 
-vitalsign.csv: Time-series data of patient vital signs (heart rate, SpO2, blood pressure, etc.).
+   vitalsign.csv: Time-series data of patient vital signs (heart rate, SpO2, blood pressure, etc.).
 
-diagnosis.csv: Patient diagnostic information (ICD codes) for contextual analysis.
+   diagnosis.csv: Patient diagnostic information (ICD codes) for contextual analysis.
 
 4. Methodology
 The project follows a standard machine learning workflow:
