@@ -17,13 +17,13 @@ This project uses data from the MIMIC-IV (Medical Information Mart for Intensive
 4. Methodology
 The project follows a standard machine learning workflow:
 
-Data Cleaning & Preprocessing: The raw vitalsign data is cleaned by converting timestamps, handling non-numeric values, and imputing missing data using forward-fill.
+   Data Cleaning & Preprocessing: The raw vitalsign data is cleaned by converting timestamps, handling non-numeric values, and imputing missing data using forward-fill.
 
-Feature Engineering: Statistical features (mean, std, min, max) are calculated over a rolling 60-minute window for each vital sign to create a "snapshot" of the patient's state over time.
+   Feature Engineering: Statistical features (mean, std, min, max) are calculated over a rolling 60-minute window for each vital sign to create a "snapshot" of the patient's state over time.
 
-Unsupervised Anomaly Detection: An Isolation Forest model is trained on the engineered features. This model learns the characteristics of "normal" data for each patient.
+   Unsupervised Anomaly Detection: An Isolation Forest model is trained on the engineered features. This model learns the characteristics of "normal" data for each patient.
 
-Scoring: The trained model assigns an anomaly score to each time point, where a higher score indicates a pattern that is more unusual for that patient.
+   Scoring: The trained model assigns an anomaly score to each time point, where a higher score indicates a pattern that is more unusual for that patient.
 
 5. Results
 The model successfully identifies clinically significant events as high-scoring anomalies. The visualization below shows a case study for a single patient, where a sharp spike in the anomaly score corresponds directly to a critical drop in the patient's oxygen saturation (SpO2), demonstrating the model's effectiveness.
